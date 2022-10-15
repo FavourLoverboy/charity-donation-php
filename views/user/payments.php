@@ -50,25 +50,46 @@
     <div class="row">
         <div class="col"></div>
             <div class="col-md-10">
-                <h3>Uploaded Video</h3>
+                <h3>My Payments</h3>
                 <div style="overflow-x:auto">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
                                 <th>S/N</th>
-                                <th>Full Name</th>
-                                <th>User</th>
-                                <th>Number</th>
-                                <th>Instagram Handle</th>
-                                <th>Uploaded Video</th>
-                                <th>Action</th>
-                                <th>Date Uploaded</th>
+                                <th>Amount</th>
+                                <th>Date</th>
                             </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                               <td colspan="8">No Payment made yet</td>
-                           </tr>
+                            <?php
+                                $tblquery = "SELECT * FROM payments WHERE user_id = :id ORDER BY date DESC";
+                                $tblvalue = array(
+                                    ':id' => $_SESSION['myId']
+                                );
+                                $select =$connect->tbl_select($tblquery, $tblvalue);
+                                $si = 1;
+                                if($select){
+                                    foreach($select as $data){
+                                        extract($data);
+                                        ?>
+                                        <?php
+                                            echo "
+                                                <tr>
+                                                    <th>$si</th>
+                                                    <th>$amt</th>
+                                                    <th>$date</th>
+                                                </tr>
+                                            ";
+                                            $si++;
+                                    }
+                                }else{
+                                    echo "
+                                        <tr>
+                                            <td colspan='8'>No Payment made yet</td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
                         </tbody>
 
                     </table>
@@ -92,7 +113,7 @@
         </div>
         <div class="bottom">
             <form action="<?php echo $url[0],'/payments' ?>" method="POST">
-                <input type="text" name="amt" value="<?php echo $_SESSION['amount']; ?>" required style="color: #000;">
+                <input type="text" name="amt" value="<?php echo $_SESSION['amount']; ?>" required style="color: #000;" readonly>
                 <input type="submit" name="payment" class="btn" value="Proceed">
             </form>
         </div>

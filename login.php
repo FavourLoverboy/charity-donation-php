@@ -10,7 +10,7 @@
     }
 
     if($_SESSION['country'] == 'Nigeria'){
-        $_SESSION['amount'] = 500;
+        $_SESSION['amount'] = 200000;
         // $_SESSION['currency'] = 'NGN';
     }
     elseif($_SESSION['country'] == 'Ghana'){

@@ -11304,6 +11304,51 @@ body.sidebar-toggled footer.sticky-footer {
 
 
 /* New Styles */
+
+/* Dashboard */
+.fav-dash{
+  /* background: purple; */
+}
+.fav-dash .top-bottom-bend{
+  /* background: blue; */
+  border-left: 5px solid #3a3b45;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  height: 100px;
+}
+.fav-dash > div{
+  margin-bottom: 10px;
+}
+.fav-dash .row .icon{
+  background: #dae1f6;
+  position: relative;
+}
+.fav-dash .row .icon span{
+  color: #3a3b45;
+  font-size: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.fav-dash .top-bottom-bend .inner-right{
+  background: white;
+  color: #3a3b45;
+}
+.fav-dash .top-bottom-bend .inner-right .top{
+  /* background: red; */
+  height: 50px;
+  padding: 15px 20px;
+}
+.fav-dash .top-bottom-bend .inner-right .bottom{
+  /* background: pink; */
+  height: 50px;
+  padding: 15px 20px;
+}
+
+
+
+/* Payments */
 .popup-deposit-wrapper{
     background: rgba(0, 0, 0, .5);
     display: none;

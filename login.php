@@ -128,6 +128,7 @@
                 $_SESSION['u_name'] = $u_name;
                 $_SESSION['role'] = $role;
                 $_SESSION['ref'] = $ref;
+                $_SESSION['my_ref'] = $my_ref;
                 $_SESSION['profile'] = $profile;
 
                 if($_SESSION['role'] == '1'){

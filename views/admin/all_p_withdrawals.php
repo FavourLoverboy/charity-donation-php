@@ -5,6 +5,7 @@
         <div class="col"></div>
             <div class="col-md-10">
                 <h3>All Withdrawals</h3>
+                <p><?php echo $_SESSION['user_fullname']; ?></p>
                 <div style="overflow-x:auto">
                     <table class="table table-hover table-bordered">
                         <thead>

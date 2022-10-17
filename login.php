@@ -23,7 +23,10 @@
     }else{
         $_SESSION['amount'] = 4352.00;
         // $_SESSION['currency'] = 'USD';
+        $_SESSION['country'] = 'nothing';
     }
+
+    echo $_SESSION['country'];
 
 ?>
     <title>Login | I Hope In Christ</title>

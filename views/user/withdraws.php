@@ -105,7 +105,7 @@
                                 }else{
                                     echo "
                                         <tr>
-                                            <td colspan='8'>No Payment made yet</td>
+                                            <td colspan='8'>No Withdrawal yet</td>
                                         </tr>
                                     ";
                                 }

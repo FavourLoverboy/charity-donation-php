@@ -71,10 +71,10 @@
 <div class="container">
     <!-- Content Row -->
     <div class="row fav-dash">
-        <div class="col-md-3 p-1">
+        <div class="col-md-3">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-4 icon p-5">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fas fa-address-book"></i>
                         </span>

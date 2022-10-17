@@ -19,8 +19,10 @@
                         </thead>
                         <tbody>
                             <?php
-                                $tblquery = "SELECT withdrawal.user_id, COUNT(withdrawal.amt) AS w_count, SUM(withdrawal.amt) AS w, tbl_users.l_name, tbl_users.f_name, tbl_users.profile FROM withdrawal INNER JOIN tbl_users ON withdrawal.user_id = tbl_users.usr_ID GROUP BY withdrawal.user_id ORDER BY tbl_users.l_name DESC";
-                                $tblvalue = array();
+                                $tblquery = "SELECT withdrawal.user_id, COUNT(withdrawal.amt) AS w_count, SUM(withdrawal.amt) AS w, tbl_users.l_name, tbl_users.f_name, tbl_users.profile FROM withdrawal INNER JOIN tbl_users ON withdrawal.user_id = tbl_users.usr_ID WHERE withdrawal.status = :status GROUP BY withdrawal.user_id ORDER BY tbl_users.l_name DESC";
+                                $tblvalue = array(
+                                    ':status' => 'Pending'
+                                );
                                 $select =$connect->tbl_select($tblquery, $tblvalue);
                                 $si = 1;
                                 if($select){
@@ -38,7 +40,7 @@
                                                     <td>$w_count</td>
                                                     <td>$w</td>
                                                     <td>
-                                                        <form action='$url[0]/withdrawals' method='POST'>
+                                                        <form action='$url[0]/p_withdrawals' method='POST'>
                                                             <input type='hidden' name='id' value='$user_id'>
                                                             <button type='submit' class='btn btn-success btn-sm'>View</>
                                                         </form>
@@ -70,7 +72,7 @@
         extract($_POST);
 
         $_SESSION['with_id'] = $id;
-        echo "<script>  window.location='$url[0]/all_withdrawals' </script>";
+        echo "<script>  window.location='$url[0]/all_p_withdrawals' </script>";
     }
 
 ?>

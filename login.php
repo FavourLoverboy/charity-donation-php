@@ -117,7 +117,7 @@
             ':login' => htmlspecialchars($email),
             ':password' => htmlspecialchars($encryptPassword)
         );
-        print_r($tblvalue);
+        // print_r($tblvalue);
         $login = $connect->tbl_select($tblquery, $tblvalue);
         
         if($login){
@@ -130,6 +130,7 @@
                 $_SESSION['ref'] = $ref;
                 $_SESSION['my_ref'] = $my_ref;
                 $_SESSION['profile'] = $profile;
+                $_SESSION['password'] = $password;
 
                 if($_SESSION['role'] == '1'){
                     echo "<script>  window.location='admin/dashboard' </script>";

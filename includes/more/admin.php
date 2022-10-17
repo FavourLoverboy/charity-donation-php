@@ -18,6 +18,12 @@
         </a>
     </li>
     <li class="nav-item <?php echo $active6;?>">
+        <a class="nav-link" href="<?php echo $url[0], '/p_withdrawals';?>">
+            <i class="fas fa-user"></i>
+            <span>Pending Withdrawals</span>
+        </a>
+    </li>
+    <li class="nav-item <?php echo $active6;?>">
         <a class="nav-link" href="<?php echo $url[0], '/withdrawals';?>">
             <i class="fas fa-user"></i>
             <span>Withdrawals</span>

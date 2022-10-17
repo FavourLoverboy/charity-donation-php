@@ -11407,3 +11407,9 @@ body.sidebar-toggled footer.sticky-footer {
     padding: 5px 15px;
     width: 100px;
 }
+
+.form-setting input{
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 2px;
+}

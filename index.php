@@ -17,8 +17,8 @@
         $page = "views/$filePath/" . $url[1] . '.php';
         include('main.php');
     }
-    elseif(!file_exists("views/$filePath" . $url[1] . '.php') && $url[0] != "") {
-        include("404.php");
+    elseif(!file_exists("views/$filePath/" . $url[1] . '.php') && $url[0] != "") {
+        include("login.php");
     }
 ?>
     

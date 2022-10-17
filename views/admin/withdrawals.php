@@ -26,6 +26,7 @@
                                 if($select){
                                     foreach($select as $data){
                                         extract($data);
+                                        $_SESSION['user_fullname'] = $l_name . ' ' . $f_name;
                                         ?>
                                         <?php
                                             echo "

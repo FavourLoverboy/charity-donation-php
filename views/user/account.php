@@ -98,7 +98,30 @@
                     });
                 </script>
             "; 
+        }
     }
-    }
+ 
+    if($_POST['account']){
+        extract($_POST);
 
+        $tblquery = "INSERT INTO account VALUES(:id, :user_id, :name, :numbers, :bank, :time)";
+        $tblvalue = array(
+            ':id' => NULL,
+            ':user_id' => htmlspecialchars($_SESSION['myId']),
+            ':name' => htmlspecialchars($name),
+            ':numbers' => htmlspecialchars($number),
+            ':bank' => htmlspecialchars($bank),
+            ':time' => time()
+        );
+        $insert = $connect->tbl_insert($tblquery, $tblvalue);
+        if($insert){
+            echo "
+                <script>
+                    swal('Updated', 'your account have been added, click on the button below to continue.').then(function(){
+                        window.location.href='$url[0]/account'
+                    });
+                </script>
+            "; 
+        }
+    }
 ?>

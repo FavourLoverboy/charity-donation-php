@@ -58,6 +58,19 @@ $dbname = "charity_donation";
   }
     }
 	//update
+
+ //delete
+ public function tbl_delete($tblquery,$tblvalue = array())
+ { 
+ try{
+  $stmt = $this->connect->prepare($tblquery);
+  $results = $stmt->execute($tblvalue);
+   return $results; 
+} catch(PDOException $e) {
+   echo 'update Error: ' . $e->getMessage();
+  }
+    }
+	//delete
   
  //Encoding Password
  public function epass($epass)

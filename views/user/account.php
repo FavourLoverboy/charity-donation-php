@@ -2,30 +2,6 @@
 <div class="container">
     <!-- Content Row -->
     <div class="row">
-        <?php 
-                
-            $tblquery = "SELECT * FROM account WHERE user_id = :id ORDER BY time DESC LIMIT 1";
-            $tblvalue = array(
-                ':id' => $_SESSION['myId']
-            );
-            $select = $connect->tbl_select($tblquery, $tblvalue);
-            if($select){
-                foreach($select as $data){
-                    extract($data);
-                    ?>
-                    <?php
-                    echo "
-                        <p>Account Name: $name ||</p>
-                        <p>Bank Name: $bank ||</p>
-                        <p>Account Number: $numbers</p>
-                    ";
-                }
-            }else{
-                echo '<p>You have not added your account yet</p>';
-            }
-        ?>
-    </div>
-    <div class="row">
         <form class="form-setting" action='<?php echo $url[0], '/account'; ?>' method="POST">
             <h3>Account Details</h3>
             <div class="form-group">
@@ -45,25 +21,79 @@
             </div>
         </form>
     </div>
+    <div class="row">
+        <div class="col"></div>
+            <div class="col-md-10">
+                <h3>My Accounts</h3>
+                <div style="overflow-x:auto">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Account Name</th>
+                                <th>Account Number</th>
+                                <th>Bank</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $tblquery = "SELECT * FROM account WHERE user_id = :id ORDER BY time DESC";
+                                $tblvalue = array(
+                                    ':id' => $_SESSION['myId']
+                                );
+                                $select =$connect->tbl_select($tblquery, $tblvalue);
+                                $si = 1;
+                                if($select){
+                                    foreach($select as $data){
+                                        extract($data);
+                                        ?>
+                                        <?php
+                                            echo "
+                                                <tr>
+                                                    <td>$si</td>
+                                                    <td>$name</td>
+                                                    <td>$numbers</td>
+                                                    <td>$bank</td>
+                                                    <td>
+                                                        <form action='$url[0]/account' method='POST'>
+                                                            <input type='hidden' name='id' value='$id'>
+                                                            <input type='submit' name='delete' class='btn btn-danger btn-sm' value='delete'>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                            ";
+                                            $si++;
+                                    }
+                                }else{
+                                    echo "
+                                        <tr>
+                                            <td colspan='8'>No account yet</td>
+                                        </tr>
+                                    ";
+                                }
+                            ?>
+                        </tbody>
+
+                    </table>
+                </div>	
+            </div>
+        <div class="col"></div>
+    </div>
 </div>
 
 <?php 
-    if($_POST['account']){
+    if($_POST['delete']){
         extract($_POST);
-        $tblquery = "INSERT INTO account VALUES(:id, :user_id, :name, :numbers, :bank, :time)";
+        $tblquery = "DELETE FROM account WHERE id = :id";
         $tblvalue = array(
-            ':id' => NULL,
-            ':user_id' => htmlspecialchars($_SESSION['myId']),
-            ':name' => htmlspecialchars($name),
-            ':numbers' => htmlspecialchars($number),
-            ':bank' => htmlspecialchars($bank),
-            ':time' => time()
+            ':id' => $id
         );
-        $insert = $connect->tbl_insert($tblquery, $tblvalue);
-        if($insert){
+        $delete = $connect->tbl_delete($tblquery, $tblvalue);
+        if($delete){
             echo "
                 <script>
-                    swal('Account Successful', 'Your account details has been updated, click on the button below to continue.').then(function(){
+                    swal('Account Deleted', 'The account has been deleted, click on the button below to continue.').then(function(){
                         window.location.href='$url[0]/account'
                     });
                 </script>

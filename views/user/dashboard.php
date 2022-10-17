@@ -107,12 +107,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fas fa-university"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo 'N', number_format($_SESSION['balance']); ?></div>
                             <div class="col-md-12 text-center bottom">Balance</div>
@@ -124,12 +124,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['donation_count'], '/', number_format($_SESSION['donation']); ?></div>
                             <div class="col-md-12 text-center bottom">Donations</div>
@@ -141,12 +141,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-gift" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['bonus_count'], '/', number_format($_SESSION['bonus']); ?></div>
                             <div class="col-md-12 text-center bottom">Earn</div>
@@ -158,10 +158,10 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span><i class="fa fa-globe" aria-hidden="true"></i></span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['withdraw_count'], '/', number_format($_SESSION['withdraw']); ?></div>
                             <div class="col-md-12 text-center bottom">Withdrawals</div>
@@ -173,12 +173,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-pause" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['p_withdraw_count'], '/', number_format($_SESSION['p_withdraw']); ?></div>
                             <div class="col-md-12 text-center bottom">P. Withdrawals</div>
@@ -190,12 +190,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-users" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['refferals']; ?></div>
                             <div class="col-md-12 text-center bottom">Referrals</div>

@@ -74,12 +74,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon p-5">
                         <span>
                             <i class="fas fa-address-book"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['members']; ?></div>
                             <div class="col-md-12 text-center bottom">Members</div>
@@ -91,12 +91,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-heart" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['all_payments_users'], '/', $_SESSION['all_payments'], '/', number_format($_SESSION['all_payments_amt']); ?></div>
                             <div class="col-md-12 text-center bottom">Payments</div>
@@ -108,12 +108,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-gift" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['rec_bonus'], '/', $_SESSION['all_bonus'], '/', number_format($_SESSION['rec_bonus_amt']); ?></div>
                             <div class="col-md-12 text-center bottom">Earn</div>
@@ -125,10 +125,10 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span><i class="fa fa-globe" aria-hidden="true"></i></span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['w_d_id'], '/', $_SESSION['w_all_id'], '/', number_format($_SESSION['w_s_amt']); ?></div>
                             <div class="col-md-12 text-center bottom">Withdrawals</div>
@@ -140,12 +140,12 @@
         <div class="col-md-3 p-1">
             <div class="col-md-12">
                 <div class="row top-bottom-bend">
-                    <div class="col-md-4 icon">
+                    <div class="col-4 icon">
                         <span>
                             <i class="fa fa-pause" aria-hidden="true"></i>
                         </span>
                     </div>
-                    <div class="col-md-8 inner-right">
+                    <div class="col-8 inner-right">
                         <div class="row">
                             <div class="col-md-12 text-center top"><?php echo $_SESSION['pw_d_id'], '/', $_SESSION['pw_all_id'], '/', number_format($_SESSION['pw_s_amt']); ?></div>
                             <div class="col-md-12 text-center bottom">P. Withdrawals</div>

@@ -5,7 +5,7 @@
     <div class="container-fluid bg-image">
     <div class="bg-image-overlay">
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center login-page">
             <div class="col-md"></div>
             <div class="col-xl-5 col-lg-6 col-md-8 mb-4">
                 <div class="card o-hidden border-0 shadow-lg mt-4">

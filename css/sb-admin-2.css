@@ -11306,9 +11306,6 @@ body.sidebar-toggled footer.sticky-footer {
 /* New Styles */
 
 /* Dashboard */
-.fav-dash{
-  /* background: purple; */
-}
 .fav-dash .top-bottom-bend{
   /* background: blue; */
   border-left: 5px solid #3a3b45;
@@ -11412,4 +11409,16 @@ body.sidebar-toggled footer.sticky-footer {
   border-radius: 5px;
   height: 40px;
   margin-top: 2px;
+}
+
+@media (max-width: 767px) {
+  .bg-image-overlay{
+    padding-right: 0px;
+  }
+  .login-page {
+    /* background: red; */
+    /* display: block; */
+    margin: 0 auto;
+    width: 400px;
+  }
 }

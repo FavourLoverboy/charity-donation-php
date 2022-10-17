@@ -40,7 +40,8 @@
                                             <?php echo $msg ?? "";?>
                                         </div>
                                         <div class="text-center">
-                                            <a class="h6 my-2" href="register.php">Already Registered? Sign Up Here!</a>
+                                            <a class="h6 my-2" href="register.php">Already Registered? Sign Up Here!</a><br/>
+                                            <a class="h6 my-2" href="reset.php">Reset Password</a>
                                         </div>
                                         
                                         <script>

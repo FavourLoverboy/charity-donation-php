@@ -76,7 +76,7 @@
                 <div class="row top-bottom-bend">
                     <div class="col-md-4 icon">
                         <span>
-                            <i class="fas fa-university"></i>
+                            <i class="fas fa-address-book"></i>
                         </span>
                     </div>
                     <div class="col-md-8 inner-right">

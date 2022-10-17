@@ -33,7 +33,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="<?php echo $url[0], '/setting';?>">
-            <i class="fas fa-sign-out-alt"></i>
+            <i class="fa fa-cog" aria-hidden="true"></i>
             <span>Setting</span>
         </a>
     </li>

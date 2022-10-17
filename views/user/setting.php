@@ -2,21 +2,14 @@
 <div class="container">
     <!-- Content Row -->
     <div class="row">
-        <form class="form-setting" action='<?php echo $url[0], '/setting'; ?>' method="POST">
+        <form class="form-setting" action='<?php echo $url[0], '/setting'; ?>' method="POST" enctype="multipart/form-data">
+            <h3>Profile Picture</h3>
             <div class="form-group">
-                <label for="old">Old Password</label>
-                <input type="password" name="old" class="form-control form-control-user"  id="old" placeholder="Enter Old Password" required>
+                <label for="img" class="m-0">Image</label>
+                <input type="file" name="file" class="form-control form-control-user"  id="img" required>
             </div>
             <div class="form-group">
-                <label for="new">New Password</label>
-                <input type="password" name="new" class="form-control form-control-user" id="new" placeholder="Enter New Password" required>
-            </div>
-            <div class="form-group">
-                <label for="com">Comfirm Password</label>
-                <input type="password" name="com" class="form-control form-control-user" id="com" placeholder="Comfirm Password" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" name="password" class="form-control form-control-user" value="Change">
+                <input type="submit" name="profile" class="btn btn-primary" value="Update Profile">
             </div>
         </form>
     </div>
@@ -24,18 +17,37 @@
 
 <?php 
 
-    if($_POST){
+    if($_POST['profile']){
         extract($_POST);
 
-        $tblquery = "UPDATE withdrawal SET status = :status WHERE id = :id";
+        //Get the Name of the Uploaded File
+        $fileName = $_FILES['file']['name'];
+
+        // Choose where to save the Upload File
+        $location = "uploads/".$fileName;
+
+        // Save the uploaded File to the local file system
+        if(move_uploaded_file($_FILES['file']['tmp_name'], $location)){
+        
+        }
+
+        $tblquery = "UPDATE tbl_users SET profile = :profile WHERE usr_ID = :id";
         $tblvalue = array(
-            ':status' => 'Approve',
-            ':id' => $id
+            ':profile' => htmlspecialchars($fileName),
+            ':id' => $_SESSION['myId']
         );
         $update = $connect->tbl_update($tblquery, $tblvalue);
         if($update){
-            echo "<script>  window.location='$url[0]/all_p_withdrawals' </script>";
+            echo "
+                <script>
+                    swal({
+                        title: 'Profile', 
+                        text: 'your profile image has been updated',
+                        icon: 'success',
+                        confirmButtonColor: '#c60000'
+                    });
+                </script>
+            ";
         }
     }
-
 ?>

@@ -1,6 +1,7 @@
 <?php include('includes/header.php');?>
 <?php include('includes/more/header.php');?>
 
+    <title>Registration | I Hope In Christ</title>
     <div class="container-fluid bg-image">
     <div class="bg-image-overlay">
         <!-- Outer Row -->

@@ -23,7 +23,8 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         <?php include ('includes/sidebar.php'); ?>
-        <?php include ('includes/user_title.php'); ?>
+        <?php include ('includes/more/admin_title.php'); ?>
+        <?php include ('includes/more/user_title.php'); ?>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">

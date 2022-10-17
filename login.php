@@ -1,34 +1,5 @@
 <?php include('includes/header.php');?>
 <?php include('includes/more/header.php');?>
-
-<?php 
-
-    $ip = $_REQUEST['REMOTE_ADDR']; // the IP address to query
-    $query = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
-    if($query && $query['status'] == 'success') {
-        $_SESSION['country'] = $query['country'];
-    }
-
-    if($_SESSION['country'] == 'Nigeria'){
-        $_SESSION['amount'] = 200000;
-        // $_SESSION['currency'] = 'NGN';
-    }
-    elseif($_SESSION['country'] == 'Ghana'){
-        $_SESSION['amount'] = 4011.06;
-        // $_SESSION['currency'] = 'GHS';
-    }
-    elseif($_SESSION['country'] == 'Cameroon'){
-        $_SESSION['amount'] = 1290.12;
-        // $_SESSION['currency'] = 'USD';
-    }else{
-        $_SESSION['amount'] = 4352.00;
-        // $_SESSION['currency'] = 'USD';
-        $_SESSION['country'] = 'nothing';
-    }
-
-    echo $_SESSION['country'];
-
-?>
     <title>Login | I Hope In Christ</title>
     <div class="container-fluid bg-image">
     <div class="bg-image-overlay">
@@ -134,6 +105,20 @@
                 $_SESSION['my_ref'] = $my_ref;
                 $_SESSION['profile'] = $profile;
                 $_SESSION['password'] = $password;
+                $_SESSION['country'] = $country;
+
+                if($_SESSION['country'] == 'Nigeria'){
+                    $_SESSION['amount'] = 2000;
+                }
+                elseif($_SESSION['country'] == 'Ghana'){
+                    $_SESSION['amount'] = 4011.06;
+                }
+                elseif($_SESSION['country'] == 'Cameroon'){
+                    $_SESSION['amount'] = 1290.12;
+                }else{
+                    $_SESSION['amount'] = 4352.00;
+                    $_SESSION['country'] = 'nothing';
+                }
 
                 if($_SESSION['role'] == '1'){
                     echo "<script>  window.location='admin/dashboard' </script>";

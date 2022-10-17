@@ -15,7 +15,7 @@
     <meta name="description" content="School Management Application">
     <meta name="author" content="">
 
-    <title>I Hope In Christ</title>
+    <!-- <title>I Hope In Christ</title> -->
 
     <script src="https://js.paystack.co/v1/inline.js"></script> 
 

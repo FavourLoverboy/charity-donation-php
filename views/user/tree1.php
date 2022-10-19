@@ -5,14 +5,12 @@
     <div class="row">
         <div class="col"></div>
             <div class="col-md-10">
-                <h3>My Refferal Link</h3>
-                <p>http://localhost/charity-donation-php/ref.php?ref=<?php echo $_SESSION['my_ref']; ?></p>
                 <div style="overflow-x:auto">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th colspan="7">My Referrals</th>
-                                <th>1st Level</th>
+                                <th colspan="7"><?php echo $_SESSION['usrname']; ?> Referrals</th>
+                                <th>2nd Level</th>
                             </tr>
                             <tr>
                                 <th>S/N</th>
@@ -29,7 +27,7 @@
                             <?php
                                 $tblquery = "SELECT * FROM tbl_users WHERE ref = :ref AND role = :role";
                                 $tblvalue = array(
-                                    ':ref' => $_SESSION['my_ref'],
+                                    ':ref' => $_SESSION['ur'],
                                     ':role' => 0
                                 );
                                 $select = $connect->tbl_select($tblquery, $tblvalue);
@@ -61,7 +59,7 @@
                                                         <td>$country</td>
                                                         <td>$date</td>
                                                         <td>
-                                                            <form action='$url[0]/referrals' method='POST'>
+                                                            <form action='$url[0]/tree1' method='POST'>
                                                                 <input type='hidden' name='name' value='$l_name $f_name'>
                                                                 <input type='hidden' name='user_ref' value='$my_ref'>
                                                                 <input type='submit' name='see' class='btn btn-success btn-sm' value='see referrals $all_ref'>
@@ -116,7 +114,7 @@
         
         $_SESSION['ur'] = $user_ref;
 
-        echo "<script>  window.location='$url[0]/tree1' </script>";
+        echo "<script>  window.location='$url[0]/tree2' </script>";
     }
 
 ?>

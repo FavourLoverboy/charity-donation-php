@@ -1,18 +1,18 @@
 <?php 
 
-    $tblquery = "SELECT ref FROM tbl_users WHERE usr_ID = :id";
-    $tblvalue = array(
-        ':id' => 10
-    );
-    $select = $connect->tbl_select($tblquery, $tblvalue);
-    foreach($select as $data) {
-        extract($data);
-        if($ref){
-            echo 'found something';
-        }else{
-            echo 'there is no data found';
-        }
-    }
+    // $tblquery = "SELECT ref FROM tbl_users WHERE usr_ID = :id";
+    // $tblvalue = array(
+    //     ':id' => 10
+    // );
+    // $select = $connect->tbl_select($tblquery, $tblvalue);
+    // foreach($select as $data) {
+    //     extract($data);
+    //     if($ref){
+    //         echo 'found something';
+    //     }else{
+    //         echo 'there is no data found';
+    //     }
+    // }
     
     
     // Initialize cURL.

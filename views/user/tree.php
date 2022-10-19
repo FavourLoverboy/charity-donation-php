@@ -5,12 +5,12 @@
     <div class="row">
         <div class="col"></div>
             <div class="col-md-10">
-                <h3>My Refferals</h3>
+                <h3>Refferals</h3>
                 <div style="overflow-x:auto">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <tr>
-                                <th colspan="7">My Refferals</th>
+                                <th colspan="7">Names: <?php echo $_SESSION['usrname']?></th>
                                 <th colspan="8">There Refferals</th>
                             </tr>
                             <tr>
@@ -36,7 +36,7 @@
                             <?php
                                 $tblquery = "SELECT * FROM tbl_users WHERE ref = :ref AND role = :role";
                                 $tblvalue = array(
-                                    ':ref' => $_SESSION['my_ref'],
+                                    ':ref' => $_SESSION['ur'],
                                     ':role' => 0
                                 );
                                 $select = $connect->tbl_select($tblquery, $tblvalue);
@@ -229,7 +229,7 @@
 
         $_SESSION['usrname'] = $name;
         
-        $_SESSION['ur'] = $user_ref;
+        $_SESSION['ur'] = $$user_ref;
 
         echo "<script>  window.location='$url[0]/tree' </script>";
     }

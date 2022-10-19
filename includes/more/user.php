@@ -18,6 +18,12 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?php echo $url[0], '/referrals';?>">
+            <i class="fas fa-credit-card"></i>
+            <span>Referrals</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?php echo $url[0], '/withdraws';?>">
             <i class="fas fa-university"></i>
             <span>Withdraws</span>

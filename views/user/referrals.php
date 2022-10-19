@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col"></div>
             <div class="col-md-10">
-                <h3>My Refferals</h3>
+                <h3>My Refferals Link</h3>
+                <p>http://localhost/charity-donation-php/ref.php?ref=<?php echo $_SESSION['my_ref']; ?></p>
                 <div style="overflow-x:auto">
                     <table class="table table-hover table-bordered">
                         <thead>
